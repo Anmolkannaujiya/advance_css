@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :not(p){
+            color: blue;
+        } */
+         /* note: here the all elements which is not p will be colored as blue, hence body gets blue as well, 
+         therefore p being child will inherit the blue, which contradicts our original wish  */
+
+        body :not(p){
+            color: blue;
+        }
+     
+        body :not(.sigma){
+            background-color: red;
+        }
+        div:empty{
+            background-color: yellow;
+            height: 100px;
+            width: 100px;
+            border: 4px ridge orange;
+        }
+        p{
+            border: 2px dotted black;
+        }
+        :root{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading</h1>
+    <div></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, rem! Maiores similique ipsam ab culpa voluptates ex? Excepturi, voluptatibus nisi quibusdam dignissimos unde sit. Assumenda rem veritatis officiis nemo! Accusamus, incidunt ea vero impedit eum minima provident libero a quod ipsum reprehenderit nemo iste placeat, magnam modi amet, tempore fugit?</p>
+    <p class="sigma">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, corrupti minima cumque delectus, aspernatur sunt sint similique dolor asperiores totam iure laudantium dolore velit, hic debitis nostrum quis omnis! Consectetur quia natus blanditiis odit enim dolores quod repudiandae quam iste sequi nostrum tempore, quo incidunt, cumque numquam modi impedit rerum.</p>
+    <div></div>
+</body>
+</html>

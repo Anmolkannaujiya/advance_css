@@ -1,0 +1,39 @@
+<!-- css specificity  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#container ul.songs li{
+            color: yellow;
+            background-color: magenta;
+        }
+        /* .favorite{
+            color: black;
+            background-color: brown;
+        } */  
+        /* this is not going to have any effects since its specificity is less than the above, hence we will increase it */
+
+        div#container ul.songs li.favorite{
+            color: red;
+            background-color: black;
+        }
+
+        /* calculating specificity : no of inline,ids,classes,element selectors */
+        /* hence : 0,1,2,3 ---> 123 specificity higher than 113 of the first */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="songs">
+            <li>song 1</li>
+            <li>song 2</li>
+            <li class="favorite">song 3</li>
+            <li>song 4</li>
+            <li>song 5</li>
+        </ul>
+    </div>
+</body>
+</html>
