@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+li{
+    list-style: none;
+}
+.burger-menu{
+    position: relative;
+    /* border: 2px solid blue; */
+}
+
+/* for hamburger menu we need to know how to
+1. state check ana chaiye ki ye click hua ya nahi
+2. agar ckeck hai toh menu display aur nahi hai toh hide  */
+
+.burger-menu input[type="checkbox"]
+{
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 32px;
+    z-index: 3;
+    opacity: 0;
+}
+.burger-lines{
+     position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 40px;
+    height: 32px;
+    z-index: 2;
+    /* background: #34f76e; */
+    /* opacity: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger-lines .line{
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #232323;
+    border-radius: 10px;
+}
+
+.menu-items{
+    /* display: none; */
+    padding-top: 80px;
+    max-width: 400px;
+    width: 90%;
+    transform: translateX(-110%);
+    transition: transform 0.4s ease-in-out;
+    padding-left: 10px;
+    border: 2px solid red;
+    background: #232323;
+    /* we will give negative margin to shift the box 
+        up and left to fit our design */
+    margin-top: -8px;
+    margin-left: -8px;
+    color: #fff;
+    /* note: setting color here means the color will remain even after transition reverse whereas if we apply the color in 
+        transition using :checked then while reversing the transition the color will go back to default */
+    padding-bottom: 10px;
+}
+
+.menu-items li{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* the below code how to check if chechkbox is checked
+as well as using tilde(~) to select the immediate sibling
+i.e. the next element just after */
+
+.burger-menu input[type="checkbox"]:checked ~ .menu-items{
+    /* display: block; */
+    transform: translateX(0%);
+    /* background: #232323; */
+    /* color: #fff; */
+
+}
+
+
+.burger-menu input[type="checkbox"]:checked ~ .burger-lines .line{
+    background-color: #fff;
+}
+
+.burger-menu .burger-lines .line-1{
+    transform-origin: 0% 0%;
+    transition: transform 0.3s ease-in-out,background-color 0.3s ease-in-out;
+    
+}
+.burger-menu .burger-lines .line-3{
+    transform-origin: 0% 100%;
+    transition: transform 0.3s ease-in-out,background-color 0.3s ease-in-out;
+    
+}
+
+.burger-menu .burger-lines .line-2{
+    transform-origin: 0% 100%;
+    transition: display 0.3s ease-in-out,background-color 0.3s ease-in-out;
+   
+}
+
+/* note: we additionally applied transition on the background color of changing from black to white to make becoming cross and burger smooth */
+.burger-menu input[type="checkbox"]:checked ~ .burger-lines .line-1{
+    transform: rotate(45deg);
+}
+.burger-menu input[type="checkbox"]:checked ~ .burger-lines .line-3{
+    transform: rotate(-45deg);
+}
+.burger-menu input[type="checkbox"]:checked ~ .burger-lines .line-2{
+    /* opacity: 0%; */
+    display: none;
+}
+
+
