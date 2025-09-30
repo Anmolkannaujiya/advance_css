@@ -1,0 +1,41 @@
+/*
+*{
+    color: blue;
+}
+*/
+
+header{
+    background-color: #e6cbcb;
+}
+
+section.my-articles{
+    background-color: #cb7474;
+}
+
+header p{
+    color: #b5870a;
+}
+
+li a{
+    color: #f20d43;
+}
+
+/* section.my-articles h2{
+    color: green;
+} */
+/* the above code of section.my-articles h2: this will change the color of all h2 within section with my-articles as class */
+
+section.my-articles > h2{
+    color:green;
+}
+
+h2+p{
+    color:orangered;
+}
+
+li+p{
+    color:lightcoral; /*only adjacent p next to li willchange other will be ineffected*/ 
+}
+section.my-articles article p#lorem{
+    color:#1F51FF;
+}
